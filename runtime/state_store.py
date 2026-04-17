@@ -46,6 +46,9 @@ class StateStore:
     def load(self, agent_id: str) -> Optional[AgentState]:
         raise NotImplementedError
 
+    def load_by_task(self, task_id: str) -> Optional[AgentState]:
+        raise NotImplementedError
+
     def exists(self, agent_id: str) -> bool:
         raise NotImplementedError
 
@@ -57,6 +60,7 @@ class MemoryStateStore(StateStore):
     def __init__(self, **config):
         super().__init__("memory", **config)
         self._store: dict[str, bytes] = {}
+        self._task_map: dict[str, str] = {}
 
     def _serialize(self, state: AgentState) -> bytes:
         data = asdict(state)
@@ -80,6 +84,8 @@ class MemoryStateStore(StateStore):
 
     def save(self, state: AgentState) -> bool:
         self._store[state.agent_id] = self._serialize(state)
+        for task_id in state.pending_task_ids:
+            self._task_map[task_id] = state.agent_id
         return True
 
     def load(self, agent_id: str) -> Optional[AgentState]:
@@ -87,6 +93,12 @@ class MemoryStateStore(StateStore):
         if data is None:
             return None
         return self._deserialize(data)
+
+    def load_by_task(self, task_id: str) -> Optional[AgentState]:
+        agent_id = self._task_map.get(task_id)
+        if agent_id is None:
+            return None
+        return self.load(agent_id)
 
     def exists(self, agent_id: str) -> bool:
         return agent_id in self._store
