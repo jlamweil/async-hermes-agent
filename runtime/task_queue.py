@@ -71,3 +71,7 @@ class TaskQueue(ABC):
     @abstractmethod
     def ping(self) -> bool:
         pass
+
+    @abstractmethod
+    def get_metrics(self) -> dict:
+        pass

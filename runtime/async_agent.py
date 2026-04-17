@@ -242,9 +242,18 @@ class AsyncAIAgent:
         if not task_id:
             return None
 
+        # Check if already processed (idempotency)
+        if hasattr(self, '_processed_tasks') and task_id in self._processed_tasks:
+            return None
+        
         result = self.task_queue.get_result_nowait(task_id)
         if result is None:
             return None
+
+        # Mark as processed
+        if not hasattr(self, '_processed_tasks'):
+            self._processed_tasks = set()
+        self._processed_tasks.add(task_id)
 
         if result.status == TaskStatus.COMPLETED:
             return self._continue_after_llm(result)
