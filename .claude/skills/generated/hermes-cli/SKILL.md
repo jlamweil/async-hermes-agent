@@ -1,11 +1,11 @@
 ---
 name: hermes-cli
-description: "Skill for the Hermes_cli area of async-hermes-agent. 1536 symbols across 171 files."
+description: "Skill for the Hermes_cli area of async-hermes-agent. 1515 symbols across 165 files."
 ---
 
 # Hermes_cli
 
-1536 symbols | 171 files | Cohesion: 60%
+1515 symbols | 165 files | Cohesion: 60%
 
 ## When to Use
 
@@ -19,14 +19,14 @@ description: "Skill for the Hermes_cli area of async-hermes-agent. 1536 symbols 
 |------|---------|
 | `hermes_cli/gateway.py` | get_installed_systemd_scopes, has_conflicting_systemd_units, print_systemd_scope_conflict_warning, _system_service_identity, prompt_linux_gateway_install_scope (+69) |
 | `hermes_cli/auth.py` | get_anthropic_key, get_active_provider, _reset_config_provider, logout_command, deactivate_provider (+67) |
-| `hermes_cli/main.py` | cmd_whatsapp, _clear_stale_openai_base_url, cmd_tools, _has_any_provider_configured, select_provider_and_model (+59) |
+| `hermes_cli/main.py` | cmd_whatsapp, _clear_stale_openai_base_url, cmd_tools, _has_any_provider_configured, select_provider_and_model (+57) |
 | `hermes_cli/config.py` | is_managed, managed_error, get_config_path, get_env_path, _secure_file (+43) |
 | `tests/hermes_cli/test_plugins.py` | _make_plugin_dir, test_discover_user_plugins, test_discover_project_plugins, test_discover_project_plugins_skipped_by_default, test_discover_is_idempotent (+40) |
-| `hermes_cli/models.py` | probe_api_models, fetch_api_models, _is_model_free, filter_nous_free_models, is_nous_free_tier (+37) |
-| `hermes_cli/setup.py` | print_header, print_noninteractive_setup_guidance, prompt, prompt_choice, prompt_yes_no (+35) |
-| `hermes_cli/web_server.py` | get_status, get_toolsets, get_skills, toggle_skill, set_dashboard_theme (+33) |
-| `cli.py` | status, load_cli_config, _show_model_and_providers, _handle_snapshot_command, _normalize_model_for_provider (+31) |
+| `hermes_cli/models.py` | probe_api_models, fetch_api_models, validate_requested_model, _is_model_free, filter_nous_free_models (+37) |
+| `hermes_cli/setup.py` | print_header, print_noninteractive_setup_guidance, prompt, _curses_prompt_choice, prompt_choice (+35) |
 | `tests/hermes_cli/test_backup.py` | test_missing_files_skipped, test_list_snapshots, test_list_limit, test_auto_prune, test_manual_prune (+28) |
+| `hermes_cli/web_server.py` | get_status, get_toolsets, get_skills, toggle_skill, set_dashboard_theme (+27) |
+| `hermes_cli/tools_config.py` | _get_effective_configurable_toolsets, _get_plugin_toolset_keys, _run_post_setup, _get_enabled_platforms, _platform_toolset_summary (+24) |
 
 ## Entry Points
 
@@ -49,8 +49,6 @@ Start here when exploring this area:
 | `PluginContext` | Class | `hermes_cli/plugins.py` | 123 |
 | `AuthError` | Class | `hermes_cli/auth.py` | 508 |
 | `SlashCommandCompleter` | Class | `hermes_cli/commands.py` | 716 |
-| `SessionDB` | Class | `hermes_state.py` | 114 |
-| `ChatConsole` | Class | `cli.py` | 1344 |
 | `DirectAlias` | Class | `hermes_cli/model_switch.py` | 164 |
 | `FakeTool` | Class | `tests/hermes_cli/test_mcp_config.py` | 66 |
 | `NousFeatureState` | Class | `hermes_cli/nous_subscription.py` | 27 |
@@ -62,6 +60,8 @@ Start here when exploring this area:
 | `RegistrationError` | Class | `hermes_cli/dingtalk_auth.py` | 37 |
 | `SlashCommandAutoSuggest` | Class | `hermes_cli/commands.py` | 1163 |
 | `PooledCredential` | Class | `agent/credential_pool.py` | 91 |
+| `ConfigIssue` | Class | `hermes_cli/config.py` | 1943 |
+| `SkinConfig` | Class | `hermes_cli/skin_engine.py` | 120 |
 
 ## Execution Flows
 
@@ -82,14 +82,14 @@ Start here when exploring this area:
 
 | Area | Connections |
 |------|-------------|
-| Tools | 180 calls |
-| Agent | 103 calls |
-| Gateway | 46 calls |
-| Tests | 35 calls |
+| Tools | 173 calls |
+| Agent | 98 calls |
+| Gateway | 40 calls |
 | Skills | 33 calls |
-| Cli | 24 calls |
 | Platforms | 21 calls |
 | Cron | 19 calls |
+| Tests | 19 calls |
+| Cli | 16 calls |
 
 ## How to Explore
 

@@ -19,8 +19,8 @@ description: "Skill for the Acp area of async-hermes-agent. 64 symbols across 9 
 |------|---------|
 | `tests/acp/test_server.py` | test_prompt_returns_end_turn_for_empty_message, test_prompt_runs_agent, test_prompt_updates_history, test_prompt_sends_final_message_update, test_prompt_populates_usage_from_top_level_run_conversation_fields (+19) |
 | `tests/acp/test_session.py` | test_update_cwd_restores_from_db, test_get_session_restores_from_db, test_save_session_updates_db, test_sessions_searchable_via_fts, test_tool_calls_persisted (+8) |
-| `acp_adapter/server.py` | new_session, prompt, _register_session_mcp_servers, resume_session, _cmd_compact (+4) |
-| `acp_adapter/session.py` | create_session, update_cwd, _persist, save_session, get_session (+3) |
+| `acp_adapter/server.py` | new_session, prompt, _register_session_mcp_servers, resume_session, cancel (+4) |
+| `acp_adapter/session.py` | create_session, update_cwd, _persist, get_session, save_session (+3) |
 | `tests/acp/test_mcp_e2e.py` | test_prompt_with_tool_calls_emits_acp_events, test_prompt_tool_results_paired_by_call_id, test_session_with_mcp_servers_registers_tools, test_slashed_server_name_registers_cleanly, test_resume_session_registers_mcp |
 | `acp_adapter/events.py` | make_thinking_cb, make_message_cb |
 | `acp_adapter/permissions.py` | make_approval_callback |
@@ -70,7 +70,7 @@ Start here when exploring this area:
 | Tests | 5 calls |
 | Gateway | 4 calls |
 | Tools | 2 calls |
-| Hermes_cli | 2 calls |
+| Agent | 2 calls |
 | Cli | 1 calls |
 
 ## How to Explore

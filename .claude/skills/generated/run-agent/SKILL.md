@@ -1,11 +1,11 @@
 ---
 name: run-agent
-description: "Skill for the Run_agent area of async-hermes-agent. 333 symbols across 42 files."
+description: "Skill for the Run_agent area of async-hermes-agent. 353 symbols across 44 files."
 ---
 
 # Run_agent
 
-333 symbols | 42 files | Cohesion: 79%
+353 symbols | 44 files | Cohesion: 77%
 
 ## When to Use
 
@@ -23,10 +23,10 @@ description: "Skill for the Run_agent area of async-hermes-agent. 333 symbols ac
 | `tests/run_agent/test_primary_runtime_restore.py` | _make_tool_defs, _make_agent, _make_transport_error, test_recovers_on_read_timeout, test_recovers_on_connect_timeout (+17) |
 | `tests/run_agent/test_anthropic_error_handling.py` | _make_agent_cls, _run_with_agent, test_429_rate_limit_is_retried_and_recovers, test_529_overloaded_is_retried_and_recovers, test_429_exhausts_all_retries_before_raising (+11) |
 | `tests/run_agent/test_fallback_model.py` | _make_agent, _mock_resolve, test_activates_openrouter_fallback, test_activates_zai_fallback, test_fallback_uses_resolved_normalized_model (+10) |
+| `cli.py` | _accent_hex, _rich_text_from_ansi, _cprint, _termux_example_image_path, ChatConsole (+9) |
 | `tests/run_agent/test_tool_arg_coercion.py` | _mock_schema, test_coerces_integer_arg, test_coerces_boolean_arg, test_coerces_number_arg, test_leaves_string_args_alone (+5) |
 | `tests/run_agent/test_openai_client_lifecycle.py` | FakeRequestClient, FakeSharedClient, OpenAIFactory, _build_agent, _connection_error (+5) |
 | `tests/run_agent/test_compression_boundary.py` | _tool_result, _assistant_with_tools, _make_compressor, test_boundary_at_clean_position, test_boundary_after_assistant_with_tools (+4) |
-| `tests/run_agent/test_interrupt_propagation.py` | test_prestart_interrupt_binds_to_execution_thread, run_thread, thread_a, thread_b, _make_bare_agent (+4) |
 
 ## Entry Points
 
@@ -48,6 +48,7 @@ Start here when exploring this area:
 | `MockChoice` | Class | `tests/run_agent/test_agent_loop.py` | 59 |
 | `MockChatCompletion` | Class | `tests/run_agent/test_agent_loop.py` | 66 |
 | `MockServer` | Class | `tests/run_agent/test_agent_loop.py` | 72 |
+| `ChatConsole` | Class | `cli.py` | 1344 |
 | `FakeRequestClient` | Class | `tests/run_agent/test_openai_client_lifecycle.py` | 16 |
 | `FakeSharedClient` | Class | `tests/run_agent/test_openai_client_lifecycle.py` | 34 |
 | `OpenAIFactory` | Class | `tests/run_agent/test_openai_client_lifecycle.py` | 38 |
@@ -61,33 +62,32 @@ Start here when exploring this area:
 | `run` | Function | `environments/agent_loop.py` | 174 |
 | `chat_completion` | Function | `tests/run_agent/test_agent_loop.py` | 83 |
 | `make_text_response` | Function | `tests/run_agent/test_agent_loop.py` | 95 |
-| `make_tool_response` | Function | `tests/run_agent/test_agent_loop.py` | 102 |
 
 ## Execution Flows
 
 | Flow | Type | Steps |
 |------|------|-------|
+| `Process_loop → _preserve_file_mode` | cross_community | 8 |
+| `Process_loop → _restore_file_mode` | cross_community | 8 |
+| `Run_background → _preserve_file_mode` | cross_community | 7 |
+| `Run_background → _restore_file_mode` | cross_community | 7 |
+| `Run_btw → _preserve_file_mode` | cross_community | 7 |
+| `Run_btw → _restore_file_mode` | cross_community | 7 |
+| `Process_loop → Strip_ansi` | cross_community | 6 |
+| `Run_background → Get_hermes_home` | cross_community | 6 |
+| `Run_background → SkinConfig` | cross_community | 6 |
 | `Collect_trajectory → Get_registered_toolset_aliases` | cross_community | 6 |
-| `Collect_trajectory → Items` | cross_community | 6 |
-| `Collect_trajectory → Get_toolset_alias_target` | cross_community | 6 |
-| `Collect_trajectory → _snapshot_state` | cross_community | 6 |
-| `Evaluate → Get_registered_toolset_aliases` | cross_community | 6 |
-| `Evaluate → Items` | cross_community | 6 |
-| `Evaluate → Get_toolset_alias_target` | cross_community | 6 |
-| `Evaluate → Get_registered_toolset_aliases` | cross_community | 6 |
-| `Evaluate → Items` | cross_community | 6 |
-| `Evaluate → Get_toolset_alias_target` | cross_community | 6 |
 
 ## Connected Areas
 
 | Area | Connections |
 |------|-------------|
-| Tools | 30 calls |
-| Hermes_cli | 14 calls |
-| Gateway | 12 calls |
-| Agent | 7 calls |
-| Cli | 6 calls |
-| Tests | 4 calls |
+| Tools | 37 calls |
+| Hermes_cli | 22 calls |
+| Gateway | 16 calls |
+| Cli | 14 calls |
+| Agent | 14 calls |
+| Tests | 13 calls |
 | Environments | 3 calls |
 | Integration | 2 calls |
 

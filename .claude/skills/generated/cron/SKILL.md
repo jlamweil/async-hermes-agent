@@ -78,11 +78,12 @@ Start here when exploring this area:
 | Area | Connections |
 |------|-------------|
 | Tools | 11 calls |
-| Gateway | 10 calls |
-| Hermes_cli | 8 calls |
-| Agent | 7 calls |
+| Agent | 10 calls |
+| Gateway | 9 calls |
+| Hermes_cli | 5 calls |
 | Cli | 1 calls |
 | Tests | 1 calls |
+| Platforms | 1 calls |
 
 ## How to Explore
 

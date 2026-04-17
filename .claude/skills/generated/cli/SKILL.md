@@ -1,11 +1,11 @@
 ---
 name: cli
-description: "Skill for the Cli area of async-hermes-agent. 360 symbols across 37 files."
+description: "Skill for the Cli area of async-hermes-agent. 356 symbols across 34 files."
 ---
 
 # Cli
 
-360 symbols | 37 files | Cohesion: 67%
+356 symbols | 34 files | Cohesion: 67%
 
 ## When to Use
 
@@ -17,10 +17,10 @@ description: "Skill for the Cli area of async-hermes-agent. 360 symbols across 3
 
 | File | Symbols |
 |------|---------|
-| `cli.py` | retry_last, _manual_compress, _get_plugin_cmd_handler_names, save_conversation, process_command (+66) |
+| `cli.py` | retry_last, _manual_compress, _get_plugin_cmd_handler_names, save_conversation, _handle_skills_command (+67) |
 | `tests/cli/test_resume_display.py` | _make_cli, _simple_history, _tool_call_history, _capture_display, test_simple_history_shows_user_and_assistant (+26) |
 | `tests/cli/test_reasoning_command.py` | _make_cli, test_streamed_reasoning_chunks_wait_for_boundary, test_pending_reasoning_flushes_when_thinking_stops, test_reasoning_preview_compacts_newlines_and_wraps_to_terminal, test_reasoning_flush_threshold_tracks_terminal_width (+21) |
-| `tests/cli/test_cli_status_bar.py` | test_minimal_tui_chrome_threshold, test_bottom_input_rule_hides_on_narrow_terminals, test_context_style_thresholds, test_fragments_fit_within_announced_width, _make_cli (+20) |
+| `tests/cli/test_cli_status_bar.py` | test_bottom_input_rule_hides_on_narrow_terminals, test_agent_spacer_reclaimed_on_narrow_terminals, test_context_style_thresholds, test_fragments_fit_within_announced_width, test_show_usage_marks_unknown_pricing (+20) |
 | `tests/cli/test_personality_none.py` | _make_cli, test_none_clears_system_prompt, test_default_clears_system_prompt, test_neutral_clears_system_prompt, test_none_forces_agent_reinit (+16) |
 | `tests/cli/test_quick_commands.py` | _make_cli, test_exec_command_stderr_shown_on_no_stdout, test_exec_command_no_output_shows_fallback, test_alias_command_routes_to_target, test_alias_command_passes_args (+13) |
 | `tests/cli/test_cli_prefix_matching.py` | _make_cli, test_unique_prefix_dispatches_command, test_unique_prefix_with_args_does_not_recurse, test_exact_command_with_args_does_not_recurse, test_ambiguous_prefix_shows_suggestions (+7) |
@@ -82,14 +82,14 @@ Start here when exploring this area:
 
 | Area | Connections |
 |------|-------------|
-| Hermes_cli | 59 calls |
+| Hermes_cli | 48 calls |
 | Tools | 38 calls |
-| Agent | 33 calls |
-| Tests | 32 calls |
-| Gateway | 24 calls |
+| Run_agent | 31 calls |
+| Gateway | 27 calls |
+| Tests | 25 calls |
+| Agent | 11 calls |
 | Cron | 8 calls |
 | Cluster_84 | 4 calls |
-| Cluster_14 | 1 calls |
 
 ## How to Explore
 

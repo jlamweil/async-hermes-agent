@@ -1,11 +1,11 @@
 ---
 name: environments
-description: "Skill for the Environments area of async-hermes-agent. 117 symbols across 28 files."
+description: "Skill for the Environments area of async-hermes-agent. 122 symbols across 28 files."
 ---
 
 # Environments
 
-117 symbols | 28 files | Cohesion: 63%
+122 symbols | 28 files | Cohesion: 62%
 
 ## When to Use
 
@@ -18,13 +18,13 @@ description: "Skill for the Environments area of async-hermes-agent. 117 symbols
 | File | Symbols |
 |------|---------|
 | `tools/environments/base.py` | get_sandbox_dir, get_temp_dir, __init__, _load_json_store, _save_json_store (+10) |
-| `tools/environments/modal.py` | _load_snapshots, _save_snapshots, _direct_snapshot_key, _get_snapshot_restore_candidate, _store_direct_snapshot (+7) |
+| `tools/environments/modal.py` | _load_snapshots, _save_snapshots, _direct_snapshot_key, _get_snapshot_restore_candidate, _store_direct_snapshot (+9) |
 | `tools/environments/singularity.py` | _get_scratch_dir, _get_apptainer_cache_dir, _get_or_build_sif, _find_singularity_executable, _ensure_singularity_available (+6) |
 | `tools/environments/managed_modal.py` | _start_modal_exec, _poll_modal_exec, _create_sandbox, _request, _cancel_exec (+4) |
 | `environments/tool_context.py` | search, terminal, download_file, download_dir, write_file (+4) |
+| `tools/environments/file_sync.py` | iter_sync_files, quoted_mkdir_command, unique_parent_dirs, quoted_rm_command, _sync_back_once (+2) |
 | `tools/environments/ssh.py` | _ensure_ssh_available, __init__, _establish_connection, _detect_remote_home, _ensure_remote_dirs (+2) |
 | `tools/environments/docker.py` | _normalize_env_dict, find_docker, _ensure_docker_available, __init__, _storage_opt_supported (+1) |
-| `tools/environments/file_sync.py` | quoted_mkdir_command, unique_parent_dirs, quoted_rm_command, _sync_back_once, _sync_back_locked (+1) |
 | `environments/web_research_env.py` | WebResearchEnvConfig, compute_reward, _llm_judge, _parse_judge_json, _heuristic_score |
 | `environments/agentic_opd_env.py` | AgenticOPDConfig, compute_reward, _apply_opd_pipeline, _opd_for_sequence, _extract_hint |
 
@@ -75,10 +75,10 @@ Start here when exploring this area:
 
 | Area | Connections |
 |------|-------------|
-| Tools | 32 calls |
+| Tools | 39 calls |
 | Hermes_cli | 4 calls |
+| Agent | 2 calls |
 | Platforms | 2 calls |
-| Agent | 1 calls |
 | Retaindb | 1 calls |
 | Run_agent | 1 calls |
 | Terminalbench_2 | 1 calls |

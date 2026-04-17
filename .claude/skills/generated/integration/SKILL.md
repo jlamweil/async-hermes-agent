@@ -1,11 +1,11 @@
 ---
 name: integration
-description: "Skill for the Integration area of async-hermes-agent. 91 symbols across 13 files."
+description: "Skill for the Integration area of async-hermes-agent. 97 symbols across 14 files."
 ---
 
 # Integration
 
-91 symbols | 13 files | Cohesion: 71%
+97 symbols | 14 files | Cohesion: 73%
 
 ## When to Use
 
@@ -21,12 +21,12 @@ description: "Skill for the Integration area of async-hermes-agent. 91 symbols a
 | `tests/integration/test_web_tools.py` | print_section, print_error, log_result, test_environment, test_web_search (+8) |
 | `tests/integration/test_ha_integration.py` | test_list_entities_returns_all, test_list_entities_domain_filter, test_rest_unauthorized, test_rest_server_error, _adapter_for (+6) |
 | `tests/integration/test_modal_terminal.py` | test_modal_requirements, test_simple_command, test_python_execution, test_pip_install, test_filesystem_persistence (+2) |
+| `gateway/platforms/discord.py` | stop, pause, resume, map_ssrc, _on_packet |
 | `tests/integration/test_checkpoint_resumption.py` | create_test_dataset, _cleanup_test_artifacts, test_current_implementation, test_interruption_and_resume, main |
-| `gateway/platforms/discord.py` | stop, map_ssrc, _on_packet |
+| `tests/gateway/test_voice_command.py` | test_pause_resume, test_on_packet_skips_when_paused, test_paused_receiver_ignores_packets, test_resumed_receiver_accepts_packets |
 | `tools/terminal_tool.py` | _parse_env_var, _get_env_config, cleanup_vm |
 | `tests/integration/test_daytona_terminal.py` | _run, test_filesystem_survives_stop_and_resume, test_different_tasks_isolated |
 | `tools/homeassistant_tool.py` | _filter_and_summarize, _async_list_entities |
-| `tests/fakes/fake_ha_server.py` | FakeHAServer, push_event |
 
 ## Entry Points
 
@@ -76,7 +76,7 @@ Start here when exploring this area:
 | Area | Connections |
 |------|-------------|
 | Tools | 25 calls |
-| Gateway | 20 calls |
+| Gateway | 19 calls |
 | Platforms | 5 calls |
 | Cron | 3 calls |
 | Hermes_cli | 2 calls |

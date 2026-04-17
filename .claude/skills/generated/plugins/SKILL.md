@@ -5,7 +5,7 @@ description: "Skill for the Plugins area of async-hermes-agent. 75 symbols acros
 
 # Plugins
 
-75 symbols | 4 files | Cohesion: 81%
+75 symbols | 4 files | Cohesion: 74%
 
 ## When to Use
 
@@ -18,7 +18,7 @@ description: "Skill for the Plugins area of async-hermes-agent. 75 symbols acros
 | File | Symbols |
 |------|---------|
 | `tests/plugins/test_retaindb_plugin.py` | _make_provider, test_initialize_creates_client_and_queue, test_initialize_default_project, test_initialize_explicit_project, test_initialize_profile_project (+51) |
-| `plugins/memory/retaindb/__init__.py` | initialize, handle_tool_call, RetainDBMemoryProvider, sync_turn, on_memory_write (+10) |
+| `plugins/memory/retaindb/__init__.py` | initialize, handle_tool_call, _Client, _headers, prefetch (+10) |
 | `web/src/App.tsx` | buildNavItems, App |
 | `web/src/plugins/usePlugins.ts` | usePlugins, resolvePlugins |
 

@@ -1,11 +1,11 @@
 ---
 name: holographic
-description: "Skill for the Holographic area of async-hermes-agent. 40 symbols across 6 files."
+description: "Skill for the Holographic area of async-hermes-agent. 38 symbols across 6 files."
 ---
 
 # Holographic
 
-40 symbols | 6 files | Cohesion: 67%
+38 symbols | 6 files | Cohesion: 67%
 
 ## When to Use
 
@@ -19,8 +19,8 @@ description: "Skill for the Holographic area of async-hermes-agent. 40 symbols a
 |------|---------|
 | `plugins/memory/holographic/store.py` | list_facts, _row_to_dict, remove_fact, _compute_hrr_vector, _rebuild_bank (+9) |
 | `plugins/memory/holographic/holographic.py` | _require_numpy, encode_atom, bind, unbind, bundle (+6) |
-| `plugins/memory/holographic/__init__.py` | _handle_fact_store, _load_plugin_config, HolographicMemoryProvider, register, handle_tool_call (+2) |
 | `plugins/memory/holographic/retrieval.py` | search, probe, related, reason, contradict (+1) |
+| `plugins/memory/holographic/__init__.py` | _handle_fact_store, _load_plugin_config, HolographicMemoryProvider, register, _auto_extract_facts |
 | `agent/memory_provider.py` | MemoryProvider |
 | `plugins/memory/byterover/__init__.py` | ByteRoverMemoryProvider |
 
@@ -63,7 +63,7 @@ Start here when exploring this area:
 
 | Area | Connections |
 |------|-------------|
-| Tools | 5 calls |
+| Tools | 3 calls |
 | Hermes_cli | 1 calls |
 
 ## How to Explore

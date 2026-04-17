@@ -1,7 +1,7 @@
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **async-hermes-agent** (47348 symbols, 110050 relationships, 300 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **async-hermes-agent** (47332 symbols, 110050 relationships, 300 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 
@@ -97,25 +97,25 @@ To check whether embeddings exist, inspect `.gitnexus/meta.json` — the `stats.
 | Rename / extract / split / refactor | `.claude/skills/gitnexus/gitnexus-refactoring/SKILL.md` |
 | Tools, resources, schema reference | `.claude/skills/gitnexus/gitnexus-guide/SKILL.md` |
 | Index, status, clean, wiki CLI commands | `.claude/skills/gitnexus/gitnexus-cli/SKILL.md` |
-| Work in the Gateway area (2676 symbols) | `.claude/skills/generated/gateway/SKILL.md` |
-| Work in the Tools area (2132 symbols) | `.claude/skills/generated/tools/SKILL.md` |
-| Work in the Hermes_cli area (1536 symbols) | `.claude/skills/generated/hermes-cli/SKILL.md` |
-| Work in the Agent area (888 symbols) | `.claude/skills/generated/agent/SKILL.md` |
-| Work in the Platforms area (670 symbols) | `.claude/skills/generated/platforms/SKILL.md` |
-| Work in the Cli area (360 symbols) | `.claude/skills/generated/cli/SKILL.md` |
+| Work in the Gateway area (2649 symbols) | `.claude/skills/generated/gateway/SKILL.md` |
+| Work in the Tools area (2137 symbols) | `.claude/skills/generated/tools/SKILL.md` |
+| Work in the Hermes_cli area (1515 symbols) | `.claude/skills/generated/hermes-cli/SKILL.md` |
+| Work in the Agent area (895 symbols) | `.claude/skills/generated/agent/SKILL.md` |
+| Work in the Platforms area (680 symbols) | `.claude/skills/generated/platforms/SKILL.md` |
+| Work in the Cli area (356 symbols) | `.claude/skills/generated/cli/SKILL.md` |
+| Work in the Run_agent area (353 symbols) | `.claude/skills/generated/run-agent/SKILL.md` |
 | Work in the Scripts area (341 symbols) | `.claude/skills/generated/scripts/SKILL.md` |
-| Work in the Run_agent area (333 symbols) | `.claude/skills/generated/run-agent/SKILL.md` |
-| Work in the Tests area (329 symbols) | `.claude/skills/generated/tests/SKILL.md` |
-| Work in the Honcho_plugin area (145 symbols) | `.claude/skills/generated/honcho-plugin/SKILL.md` |
-| Work in the Environments area (117 symbols) | `.claude/skills/generated/environments/SKILL.md` |
+| Work in the Tests area (331 symbols) | `.claude/skills/generated/tests/SKILL.md` |
+| Work in the Honcho_plugin area (140 symbols) | `.claude/skills/generated/honcho-plugin/SKILL.md` |
+| Work in the Environments area (122 symbols) | `.claude/skills/generated/environments/SKILL.md` |
 | Work in the Cron area (103 symbols) | `.claude/skills/generated/cron/SKILL.md` |
-| Work in the Integration area (91 symbols) | `.claude/skills/generated/integration/SKILL.md` |
+| Work in the Integration area (97 symbols) | `.claude/skills/generated/integration/SKILL.md` |
 | Work in the Plugins area (75 symbols) | `.claude/skills/generated/plugins/SKILL.md` |
-| Work in the Honcho area (68 symbols) | `.claude/skills/generated/honcho/SKILL.md` |
+| Work in the Honcho area (72 symbols) | `.claude/skills/generated/honcho/SKILL.md` |
 | Work in the Acp area (64 symbols) | `.claude/skills/generated/acp/SKILL.md` |
-| Work in the Memory area (60 symbols) | `.claude/skills/generated/memory/SKILL.md` |
 | Work in the Skills area (56 symbols) | `.claude/skills/generated/skills/SKILL.md` |
-| Work in the Acp_adapter area (45 symbols) | `.claude/skills/generated/acp-adapter/SKILL.md` |
-| Work in the Holographic area (40 symbols) | `.claude/skills/generated/holographic/SKILL.md` |
+| Work in the Memory area (53 symbols) | `.claude/skills/generated/memory/SKILL.md` |
+| Work in the Acp_adapter area (44 symbols) | `.claude/skills/generated/acp-adapter/SKILL.md` |
+| Work in the Holographic area (38 symbols) | `.claude/skills/generated/holographic/SKILL.md` |
 
 <!-- gitnexus:end -->

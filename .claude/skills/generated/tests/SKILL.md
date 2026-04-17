@@ -1,32 +1,32 @@
 ---
 name: tests
-description: "Skill for the Tests area of async-hermes-agent. 329 symbols across 37 files."
+description: "Skill for the Tests area of async-hermes-agent. 331 symbols across 35 files."
 ---
 
 # Tests
 
-329 symbols | 37 files | Cohesion: 61%
+331 symbols | 35 files | Cohesion: 59%
 
 ## When to Use
 
 - Working with code in `tests/`
-- Understanding how create_session, update_system_prompt, append_message work
+- Understanding how create_session, update_system_prompt, set_session_title work
 - Modifying tests-related functionality
 
 ## Key Files
 
 | File | Symbols |
 |------|---------|
-| `tests/test_hermes_state.py` | test_update_system_prompt, test_append_and_get_messages, test_message_increments_session_count, test_tool_response_does_not_increment_tool_count, test_assistant_tool_calls_increment_by_count (+91) |
-| `tests/test_mcp_serve.py` | test_enqueue_and_poll, test_cursor_filter, test_wait_immediate, test_wait_timeout, test_wait_wakes_on_enqueue (+23) |
+| `tests/test_hermes_state.py` | test_update_system_prompt, test_export_session, test_set_and_get_title, test_update_title, test_title_in_search_sessions (+90) |
+| `tests/test_mcp_serve.py` | test_enqueue_and_poll, test_wait_immediate, test_wait_timeout, test_wait_wakes_on_enqueue, test_queue_limit (+23) |
 | `tests/test_trajectory_compressor.py` | test_to_dict, test_default_values, _make_compressor, test_protect_last_n_zero, test_disable_protect_first_system (+19) |
-| `hermes_state.py` | _execute_write, create_session, update_system_prompt, append_message, get_messages (+18) |
+| `hermes_state.py` | _execute_write, create_session, update_system_prompt, set_session_title, get_session_by_title (+17) |
 | `trajectory_compressor.py` | TrajectoryMetrics, to_dict, count_trajectory_tokens, count_turn_tokens, compress_trajectory (+15) |
-| `mcp_serve.py` | QueueEvent, wait_for_event, respond_to_approval, _enqueue, EventBridge (+8) |
+| `mcp_serve.py` | QueueEvent, wait_for_event, list_pending_approvals, respond_to_approval, _enqueue (+8) |
 | `tests/test_model_tools_async_bridge.py` | _get_current_loop, test_loop_not_closed_after_run_async, test_same_loop_reused_across_calls, test_cached_transport_survives_between_calls, _run_on_worker (+8) |
 | `tests/test_plugin_skills.py` | _setup_bundle, test_banner_present, test_banner_lists_siblings_not_self, test_single_skill_no_sibling_line, test_original_content_preserved (+8) |
+| `tests/gateway/test_resume_command.py` | _make_event, _make_runner, test_no_session_db, test_list_named_sessions_when_no_arg, test_list_shows_usage_when_no_titled (+6) |
 | `tests/test_cli_skin_integration.py` | test_default_compact_banner_keeps_legacy_nous_hermes_branding, test_poseidon_compact_banner_uses_skin_branding_instead_of_nous_hermes, test_poseidon_compact_banner_uses_skin_colors, test_compact_banner_shows_version_label, _make_cli_stub (+6) |
-| `tests/test_evidence_store.py` | test_evidence_store_add, test_evidence_store_add_persists, test_evidence_store_sequential_ids, test_evidence_store_list, test_evidence_store_verify_integrity (+5) |
 
 ## Entry Points
 
@@ -34,9 +34,9 @@ Start here when exploring this area:
 
 - **`create_session`** (Function) — `hermes_state.py:354`
 - **`update_system_prompt`** (Function) — `hermes_state.py:402`
-- **`append_message`** (Function) — `hermes_state.py:790`
-- **`get_messages`** (Function) — `hermes_state.py:865`
-- **`get_messages_as_conversation`** (Function) — `hermes_state.py:885`
+- **`set_session_title`** (Function) — `hermes_state.py:605`
+- **`get_session_by_title`** (Function) — `hermes_state.py:643`
+- **`resolve_session_by_title`** (Function) — `hermes_state.py:652`
 
 ## Key Symbols
 
@@ -51,17 +51,17 @@ Start here when exploring this area:
 | `AggregateMetrics` | Class | `trajectory_compressor.py` | 202 |
 | `create_session` | Function | `hermes_state.py` | 354 |
 | `update_system_prompt` | Function | `hermes_state.py` | 402 |
-| `append_message` | Function | `hermes_state.py` | 790 |
-| `get_messages` | Function | `hermes_state.py` | 865 |
-| `get_messages_as_conversation` | Function | `hermes_state.py` | 885 |
-| `search_messages` | Function | `hermes_state.py` | 989 |
-| `message_count` | Function | `hermes_state.py` | 1127 |
+| `set_session_title` | Function | `hermes_state.py` | 605 |
+| `get_session_by_title` | Function | `hermes_state.py` | 643 |
+| `resolve_session_by_title` | Function | `hermes_state.py` | 652 |
+| `get_next_title_in_lineage` | Function | `hermes_state.py` | 681 |
 | `export_session` | Function | `hermes_state.py` | 1142 |
-| `export_all` | Function | `hermes_state.py` | 1150 |
 | `test_update_system_prompt` | Function | `tests/test_hermes_state.py` | 48 |
-| `test_append_and_get_messages` | Function | `tests/test_hermes_state.py` | 91 |
-| `test_message_increments_session_count` | Function | `tests/test_hermes_state.py` | 102 |
-| `test_tool_response_does_not_increment_tool_count` | Function | `tests/test_hermes_state.py` | 110 |
+| `test_export_session` | Function | `tests/test_hermes_state.py` | 581 |
+| `test_set_and_get_title` | Function | `tests/test_hermes_state.py` | 753 |
+| `test_update_title` | Function | `tests/test_hermes_state.py` | 768 |
+| `test_title_in_search_sessions` | Function | `tests/test_hermes_state.py` | 776 |
+| `test_title_in_export` | Function | `tests/test_hermes_state.py` | 786 |
 
 ## Execution Flows
 
@@ -82,14 +82,14 @@ Start here when exploring this area:
 
 | Area | Connections |
 |------|-------------|
-| Hermes_cli | 24 calls |
-| Tools | 19 calls |
-| Agent | 11 calls |
-| Gateway | 10 calls |
+| Agent | 27 calls |
+| Gateway | 23 calls |
+| Hermes_cli | 16 calls |
+| Tools | 16 calls |
 | Cli | 7 calls |
+| Run_agent | 4 calls |
 | Scripts | 4 calls |
-| Acp_adapter | 2 calls |
-| Platforms | 2 calls |
+| Cluster_29 | 2 calls |
 
 ## How to Explore
 
