@@ -277,11 +277,14 @@ def _get_named_custom_provider(requested_provider: str) -> Optional[Dict[str, An
         return None
     if not requested_norm.startswith("custom:"):
         try:
-            auth_mod.resolve_provider(requested_norm)
+            resolved = auth_mod.resolve_provider(requested_norm)
         except AuthError:
             pass
         else:
-            return None
+            # Only skip config lookup if resolved to a real provider.
+            # If it resolved to "custom", that's an alias for custom config - continue.
+            if resolved and resolved != "custom":
+                return None
 
     config = load_config()
     
